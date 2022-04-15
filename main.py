@@ -19,6 +19,7 @@ import random
 from os import name as OS_NAME
 from os import system
 from os import getcwd
+import json
 
 
 def clear():
@@ -34,3 +35,9 @@ def clear():
 
 
 clear()
+
+
+def get_user_args():
+    """return all the command passed arguments except the file name."""
+
+    return argv[1:]

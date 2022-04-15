@@ -41,3 +41,11 @@ def get_user_args():
     """return all the command passed arguments except the file name."""
 
     return argv[1:]
+
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()

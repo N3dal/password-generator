@@ -44,6 +44,7 @@ def get_user_args():
     return [arg.lower() for arg in argv[1:]]
 
 
+
 def arguments_parse():
     """parse the user arguments and remove or raise an error,
     if there are any wrong argument.
@@ -74,11 +75,35 @@ def arguments_parse():
         passgen --no--numbers
         remove numbers from your password.
 
+        passgen -h or passgen --help
+        show this help message.
+
     """
+
+    OPTIONS = (
+        "--lower",
+        "--upper",
+        "--numbers",
+        "--special",
+        "--no-lower",
+        "--no-numbers",
+        "-h", "--help"
+    )
+
+    # get the user option aka command arguments.
+    user_options = get_user_args()
+    # print(user_options)
+
+    # guard conditions.
+
+    if not all((option in OPTIONS) for option in user_options):
+        # if we get any option does not exist in our options.
+        print("Invalid option.")
+        print("Try 'passgen --help' for more information.")
 
 
 def main():
-    pass
+    arguments_parse()
 
 
 if __name__ == "__main__":

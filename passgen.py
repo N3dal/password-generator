@@ -108,11 +108,20 @@ def arguments_parse():
     # print(user_options)
 
     # guard conditions.
-
     if not all((option in OPTIONS) for option in user_options):
         # if we get any option does not exist in our options.
         print("Invalid option.")
         print("Try 'passgen --help' for more information.")
+
+    if "--lower" in user_options and "--no-lower" in user_options:
+        # if both --lower and --no-lower exist then we will apply,
+        # --no-lower.
+        pass
+
+    if "--numbers" in user_options and "--no-numbers" in user_options:
+        # if both --numbers and --no-numbers exist then we will apply,
+        # --no-numbers.
+        pass
 
 
 def main():

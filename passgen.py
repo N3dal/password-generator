@@ -38,9 +38,10 @@ clear()
 
 
 def get_user_args():
-    """return all the command passed arguments except the file name."""
+    """return all the command passed arguments except the file name,
+    and convert them into lower case."""
 
-    return argv[1:]
+    return [arg.lower() for arg in argv[1:]]
 
 
 def arguments_parse():

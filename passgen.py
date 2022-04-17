@@ -85,6 +85,17 @@ def help_message():
     print(DOC)
 
 
+def default():
+    """the default procedure when we get an empty commands,
+    simply out when we get the passgen command without args,
+    then we will call this function, and active the default options.
+    'passgen' == 'password --length 8 --lower --numbers' 
+
+    """
+
+    pass
+
+
 def arguments_parse():
     """parse the user arguments and remove or raise an error,
     if there are any wrong argument.
@@ -108,6 +119,12 @@ def arguments_parse():
     # print(user_options)
 
     # guard conditions.
+    if not user_options:
+        # if we get an empty collection,
+        # simply out command without args,
+        # then do the default procedure.
+        default()
+
     if not all((option in OPTIONS) for option in user_options):
         # if we get any option does not exist in our options.
         print("Invalid option.")

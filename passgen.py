@@ -44,9 +44,11 @@ def get_user_args():
     return [arg.lower() for arg in argv[1:]]
 
 
+def help_message():
+    """print a help message.
+    in simple words print the program documentation"""
 
-def arguments_parse():
-    """parse the user arguments and remove or raise an error,
+    PASSGEN_DOCUMENTATION = """parse the user arguments and remove or raise an error,
     if there are any wrong argument.
 
         passgen --length
@@ -77,6 +79,17 @@ def arguments_parse():
 
         passgen -h or passgen --help
         show this help message.
+
+    """
+
+    print(DOC)
+
+
+def arguments_parse():
+    """parse the user arguments and remove or raise an error,
+    if there are any wrong argument.
+
+    see the help function for more info about option/keywords.
 
     """
 

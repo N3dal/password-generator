@@ -171,6 +171,11 @@ def _show():
     pass
 
 
+def _set():
+    """set new password"""
+    pass
+
+
 def main_loop():
     """the main loop for our REPL program."""
 

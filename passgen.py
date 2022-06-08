@@ -178,7 +178,7 @@ def _set():
 
 def _options():
     """show all repl options"""
-    pass
+    _help(1)
 
 
 def main_loop():
@@ -195,7 +195,7 @@ def main_loop():
             clear()
 
         elif usr_input == "help":
-            _help()
+            _help(1)
 
         elif usr_input in ("generate", "get"):
             _generate()

@@ -15,7 +15,7 @@
 # -----------------------------------------------------------------
 
 import string
-from sys import argv
+from sys import argv, exit
 from random import (randint, choice)
 from os import name as OS_NAME
 from os import system
@@ -48,11 +48,11 @@ def clear():
     """wipe terminal screen."""
 
     if OS_NAME == "posix":
-        # *nix machines.
+        # for *nix machines.
         system("clear")
 
     else:
-        # windows machines.
+        # for windows machines.
         system("cls")
 
 
@@ -64,6 +64,14 @@ def get_user_args():
     and convert them into lower case."""
 
     return [arg.lower() for arg in argv[1:]]
+
+
+def get_user_input(msg: str = ">>> "):
+    """get input from the user and return it,
+    after stript it and lower it.
+    """
+
+    return input(msg).strip().lower()
 
 
 def help_message():

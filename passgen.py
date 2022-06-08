@@ -74,7 +74,7 @@ def get_user_input(msg: str = ">>> "):
     return input(msg).strip().lower()
 
 
-def help_message():
+def _help():
     """print a help message.
     in simple words print the program documentation"""
 

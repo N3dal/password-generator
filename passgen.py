@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 # -----------------------------------------------------------------
-# simple password generator cli.
+# simple password generator.
 # this is one of my 50 python project challenge for 2021.
+# simple CLI password manager.
 #
 #
 #
@@ -15,11 +16,13 @@
 
 import string
 from sys import argv
-import random
+from random import (randint, choice)
 from os import name as OS_NAME
 from os import system
 from os import getcwd
 import json
+
+# TODO: store the password in json file.
 
 
 def clear():
@@ -94,6 +97,7 @@ def arguments_parse():
     """
 
     OPTIONS = (
+        "--length",
         "--lower",
         "--upper",
         "--numbers",
@@ -126,6 +130,7 @@ def arguments_parse():
             "--lower",
             "--numbers"
         )
+
         parsed_option_list.extend(DEFAULT_OPTIONS)
 
     if not all((option in OPTIONS) for option in user_options):
@@ -133,21 +138,25 @@ def arguments_parse():
         print("Invalid option.")
         print("Try 'passgen --help' for more information.")
 
+        return None
+
     if "--lower" in user_options and "--no-lower" in user_options:
         # if both --lower and --no-lower exist then we will apply,
         # --no-lower.
-        pass
+        parsed_option_list.append("--no-lower")
 
     if "--numbers" in user_options and "--no-numbers" in user_options:
         # if both --numbers and --no-numbers exist then we will apply,
         # --no-numbers.
-        pass
+        parsed_option_list.append("--no-numbers")
 
     return parsed_option_list
 
 
 def main():
-    arguments_parse()
+    val = arguments_parse()
+
+    print(val)
 
 
 if __name__ == "__main__":

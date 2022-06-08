@@ -24,6 +24,25 @@ import json
 
 # TODO: store the password in json file.
 
+# set the defaults.
+DEFAULT_VALUES = {
+    "len": 8,  # password default length.
+    "upper": False,  # use upper case letters.
+    "lower": True,  # use lower case letters.
+    "symbols": False,  # include symbols.
+    "numbers": False  # include numbers.
+}
+
+PROGRAM_OPTIONS = (
+    "clear", "cls"  # same command.
+    "generate", "get",  # same command.
+    "use", "set",  # same command.
+    "options",
+    "help",
+    "exit", "quit"  # same command.
+    "show"
+)
+
 
 def clear():
     """wipe terminal screen."""

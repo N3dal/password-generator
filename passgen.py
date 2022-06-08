@@ -166,6 +166,11 @@ def _generate():
     pass
 
 
+def _show():
+    """show saved passwords"""
+    pass
+
+
 def main_loop():
     """the main loop for our REPL program."""
 

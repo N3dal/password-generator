@@ -114,6 +114,43 @@ def _help():
 
     print(DOC)
 
+    return None
+
+
+def main_loop():
+    """the main loop for our REPL program."""
+
+    while True:
+        usr_input = get_user_input()
+
+        if usr_input in ("exit", "quit"):
+            # end the program .
+            _exit()
+
+        elif usr_input in ("clear", "cls"):
+            clear()
+
+        elif usr_input == "help":
+            pass
+
+        elif usr_input in ("generate", "get"):
+            pass
+
+        elif usr_input in ("set", "use"):
+            pass
+
+        elif usr_input == "options":
+            pass
+
+        elif usr_input == "show":
+            pass
+
+        else:
+            # show the option or the help,
+            # msg if the user give us a wrong,
+            # command or wrong option format.
+            print(usr_input)
+
 
 def arguments_parse():
     """parse the user arguments and remove or raise an error,

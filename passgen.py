@@ -176,6 +176,11 @@ def _set():
     pass
 
 
+def _options():
+    """show all repl options"""
+    pass
+
+
 def main_loop():
     """the main loop for our REPL program."""
 

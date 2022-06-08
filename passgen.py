@@ -161,6 +161,11 @@ def _exit():
     exit()
 
 
+def _generate():
+    """generate new password."""
+    pass
+
+
 def main_loop():
     """the main loop for our REPL program."""
 
@@ -251,9 +256,8 @@ def arguments_parse():
 
 
 def main():
-    val = arguments_parse()
 
-    print(val)
+    main_loop()
 
 
 if __name__ == "__main__":

@@ -33,7 +33,7 @@ DEFAULT_VALUES = {
     "numbers": False  # include numbers.
 }
 
-PROGRAM_OPTIONS = (
+PROGRAM_OPTIONS_REPL = (
     "clear", "cls"  # same command.
     "generate", "get",  # same command.
     "use", "set",  # same command.
@@ -41,6 +41,17 @@ PROGRAM_OPTIONS = (
     "help",
     "exit", "quit"  # same command.
     "show"
+)
+
+ARGUMENTS = (
+    "--length",
+    "--lower",
+    "--upper",
+    "--numbers",
+    "--special",
+    "--no-lower",
+    "--no-numbers",
+    "-h", "--help"
 )
 
 
@@ -167,17 +178,6 @@ def arguments_parse():
 
     """
 
-    OPTIONS = (
-        "--length",
-        "--lower",
-        "--upper",
-        "--numbers",
-        "--special",
-        "--no-lower",
-        "--no-numbers",
-        "-h", "--help"
-    )
-
     # get the user option aka command arguments.
     user_options = get_user_args()
 
@@ -204,7 +204,7 @@ def arguments_parse():
 
         parsed_option_list.extend(DEFAULT_OPTIONS)
 
-    if not all((option in OPTIONS) for option in user_options):
+    if not all((option in ARGUMENTS) for option in user_options):
         # if we get any option does not exist in our options.
         print("Invalid option.")
         print("Try 'passgen --help' for more information.")

@@ -85,11 +85,24 @@ def get_user_input(msg: str = ">>> "):
     return input(msg).strip().lower()
 
 
-def _help():
+def _help(doc_type: int = 0):
     """print a help message.
-    in simple words print the program documentation"""
+    in simple words print the program documentation.
+    notice that if we pass 0 then the doc that will been,
+    shown is for program arguments.
+    and if we pass 1 then the doc that will been shown,
+    is for program repl commands.
+    other numbers will consider as 0"""
 
-    PASSGEN_DOCUMENTATION = """parse the user arguments and remove or raise an error,
+    # guard conditions.
+    if doc_type not in (0, 1):
+        doc_type = 0
+
+    # note there are two different help msgs,
+    # one for the program arguments and the,
+    # another to the repl commands.
+
+    PASSWORD_GENERATOR_DOCUMENTATION_ARGUMENTS = """parse the user arguments and remove or raise an error,
     if there are any wrong argument.
 
         passgen --length
@@ -123,7 +136,20 @@ def _help():
 
     """
 
-    print(DOC)
+    PASSWORD_GENERATOR_DOCUMENTATION_REPL_COMMANDS = """
+    """
+
+    if doc_type == 0:
+        # print arguments doc.
+        print(PASSWORD_GENERATOR_DOCUMENTATION_ARGUMENTS)
+
+    elif doc_type == 1:
+        # print repl commands doc.
+        print(PASSWORD_GENERATOR_DOCUMENTATION_REPL_COMMANDS)
+
+    else:
+        # print("Error")
+        raise("Error in help msg.")
 
     return None
 

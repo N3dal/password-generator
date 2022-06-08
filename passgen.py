@@ -117,6 +117,13 @@ def _help():
     return None
 
 
+def _exit():
+    """when the user enter exit command,
+    for end the program execution."""
+
+    exit()
+
+
 def main_loop():
     """the main loop for our REPL program."""
 
@@ -131,7 +138,7 @@ def main_loop():
             clear()
 
         elif usr_input == "help":
-            pass
+            _help()
 
         elif usr_input in ("generate", "get"):
             pass

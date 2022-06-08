@@ -198,22 +198,23 @@ def main_loop():
             _help()
 
         elif usr_input in ("generate", "get"):
-            pass
+            _generate()
 
         elif usr_input in ("set", "use"):
-            pass
+            _set()
 
         elif usr_input == "options":
-            pass
+            _options()
 
         elif usr_input == "show":
-            pass
+            _show()
 
         else:
-            # show the option or the help,
-            # msg if the user give us a wrong,
-            # command or wrong option format.
-            print(usr_input)
+
+            # first print wrong msg then print commands list.
+            print(f"There's no command called '{usr_input}'\n")
+
+            _options()
 
 
 def arguments_parse():

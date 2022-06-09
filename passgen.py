@@ -36,7 +36,8 @@ DEFAULT_VALUES = {
 PROGRAM_OPTIONS_REPL = (
     "clear", "cls"  # same command.
     "generate", "get",  # same command.
-    "use", "set",  # same command.
+    "use",
+    "set",
     "options",
     "help",
     "exit", "quit"  # same command.
@@ -162,8 +163,8 @@ def _exit():
 
 
 def _generate():
-    """generate new password."""
-    pass
+    """generate new password depending on,
+    the password_default option dictionary."""
 
 
 def _show():
@@ -172,8 +173,13 @@ def _show():
 
 
 def _set():
-    """set new password"""
+    """set new value for password default dictionary"""
     pass
+
+
+def _use():
+    """use the password that's mean send it to the clipboard.
+    simply out send your new pass word to the clip board."""
 
 
 def _options():

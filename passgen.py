@@ -14,7 +14,7 @@
 # ///
 # -----------------------------------------------------------------
 
-import string
+from string import (ascii_lowercase, ascii_uppercase, punctuation, digits)
 from sys import argv, exit
 from random import (randint, choice)
 from os import name as OS_NAME

@@ -166,6 +166,33 @@ def _generate():
     """generate new password depending on,
     the password_default option dictionary."""
 
+    string = ""
+
+    if DEFAULT_VALUES["lower"]:
+        # if the lower option enabled.
+        string += ascii_lowercase
+
+    if DEFAULT_VALUES["upper"]:
+        # if the upper option enabled.
+        string += ascii_uppercase
+
+    if DEFAULT_VALUES["symbols"]:
+        # if the symbols option enabled.
+        string += punctuation
+
+    if DEFAULT_VALUES["numbers"]:
+        # if the numbers options enabled.
+        string += digits
+
+    password_length = DEFAULT_VALUES["len"]
+
+    generated_password = "".join(choice(string)
+                                 for _ in range(password_length))
+
+    print(generated_password)
+
+    return generated_password
+
 
 def _show():
     """show saved passwords"""

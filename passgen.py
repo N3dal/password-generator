@@ -19,6 +19,7 @@ from sys import argv, exit
 from random import (randint, choice)
 from os import name as OS_NAME
 from os import system
+from pyperclip import copy as copy2clipboard
 
 # TODO: store the password in json file.
 # TODO: send any generated password to the clipboard.

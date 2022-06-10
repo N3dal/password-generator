@@ -190,6 +190,12 @@ def _generate():
 
     print(generated_password)
 
+    # then send the generated password to clipboard.
+    copy2clipboard(generated_password)
+
+    # now tell the user that the password in clipboard.
+    print("\nthe password in the clipboard you can paste it directly.")
+
     return generated_password
 
 

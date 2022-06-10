@@ -23,6 +23,8 @@ from pyperclip import copy as copy2clipboard
 
 # TODO: store the password in json file.
 # TODO: send any generated password to the clipboard. # DONE.
+# TODO: add option to show the password map=> default-values dict to the user with fancy look, not in the dict form.
+
 
 # set the defaults.
 DEFAULT_VALUES = {
@@ -35,12 +37,12 @@ DEFAULT_VALUES = {
 
 PROGRAM_OPTIONS_REPL = (
     "clear", "cls"  # same command.
-    "generate", "get",  # same command.
+    "generate", "gen",  # same command.
     "set",
     "options",
     "help",
     "exit", "quit"  # same command.
-    "show",
+    "show"
 )
 
 ARGUMENTS = (
@@ -137,6 +139,27 @@ def _help(doc_type: int = 0):
     """
 
     PASSWORD_GENERATOR_DOCUMENTATION_REPL_COMMANDS = """
+    clear = cls
+        clear the REPL screen.
+    
+    generate = gen
+        generate random password with values in the password map,
+        and send it to the clipboard directly.
+    
+    set
+        change password map value to generate random patterns for your passwords.
+    
+    options
+        show all available options with brief description.
+    
+    help
+        show help msg simply out this msg.
+    
+    exit = quit
+        ending the REPL session.
+    
+    show
+        show last password had been generated, and send it to the clipboard again.
     """
 
     if doc_type == 0:
@@ -255,6 +278,8 @@ def arguments_parse():
     if there are any wrong argument.
 
     see the help function for more info about option/keywords.
+
+    arguments parse.
 
     """
 

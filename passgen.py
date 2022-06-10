@@ -216,6 +216,18 @@ def _options():
     _help(1)
 
 
+def _get():
+    """get password from json file or the database,
+    using username"""
+    pass
+
+
+def _save():
+    """save password to the json file or the database,
+    using username."""
+    pass
+
+
 def main_loop():
     """the main loop for our REPL program."""
 

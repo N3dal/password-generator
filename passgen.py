@@ -256,6 +256,12 @@ def main_loop():
         elif usr_input == "show":
             _show()
 
+        elif usr_input == "get":
+            _get()
+
+        elif usr_input == "save":
+            _save()
+
         else:
 
             # first print wrong msg then print commands list.

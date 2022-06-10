@@ -19,10 +19,9 @@ from sys import argv, exit
 from random import (randint, choice)
 from os import name as OS_NAME
 from os import system
-from os import getcwd
-import json
 
 # TODO: store the password in json file.
+# TODO: send any generated password to the clipboard.
 
 # set the defaults.
 DEFAULT_VALUES = {
@@ -36,14 +35,11 @@ DEFAULT_VALUES = {
 PROGRAM_OPTIONS_REPL = (
     "clear", "cls"  # same command.
     "generate", "get",  # same command.
-    "use",
     "set",
     "options",
     "help",
     "exit", "quit"  # same command.
     "show",
-    "get",  # get saved passwords.
-    "save"  # save password with username.
 )
 
 ARGUMENTS = (
@@ -197,7 +193,7 @@ def _generate():
 
 
 def _show():
-    """show saved passwords"""
+    """show last password had been generated."""
     pass
 
 
@@ -206,26 +202,9 @@ def _set():
     pass
 
 
-def _use():
-    """use the password that's mean send it to the clipboard.
-    simply out send your new pass word to the clip board."""
-
-
 def _options():
     """show all repl options"""
     _help(1)
-
-
-def _get():
-    """get password from json file or the database,
-    using username"""
-    pass
-
-
-def _save():
-    """save password to the json file or the database,
-    using username."""
-    pass
 
 
 def main_loop():
@@ -244,10 +223,10 @@ def main_loop():
         elif usr_input == "help":
             _help(1)
 
-        elif usr_input in ("generate", "get"):
+        elif usr_input in ("generate", "gen"):
             _generate()
 
-        elif usr_input in ("set", "use"):
+        elif usr_input in "set":
             _set()
 
         elif usr_input == "options":
@@ -255,12 +234,6 @@ def main_loop():
 
         elif usr_input == "show":
             _show()
-
-        elif usr_input == "get":
-            _get()
-
-        elif usr_input == "save":
-            _save()
 
         else:
 

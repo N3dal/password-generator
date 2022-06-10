@@ -41,7 +41,9 @@ PROGRAM_OPTIONS_REPL = (
     "options",
     "help",
     "exit", "quit"  # same command.
-    "show"
+    "show",
+    "get",  # get saved passwords.
+    "save"  # save password with username.
 )
 
 ARGUMENTS = (

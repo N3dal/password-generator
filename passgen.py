@@ -36,12 +36,12 @@ DEFAULT_VALUES = {
 }
 
 PROGRAM_OPTIONS_REPL = (
-    "clear", "cls"  # same command.
+    "clear", "cls",  # same command.
     "generate", "gen",  # same command.
     "set",
     "options",
     "help",
-    "exit", "quit"  # same command.
+    "exit", "quit",  # same command.
     "show"
 )
 
@@ -234,7 +234,11 @@ def _set():
 
 def _options():
     """show all repl options"""
-    _help(1)
+
+    for index, option in enumerate(PROGRAM_OPTIONS_REPL, 1):
+        print(f"[{str(index).zfill(2)}] '{option}'")
+
+    return None
 
 
 def main_loop():

@@ -22,7 +22,7 @@ from os import system
 from pyperclip import copy as copy2clipboard
 
 # TODO: store the password in json file.
-# TODO: send any generated password to the clipboard.
+# TODO: send any generated password to the clipboard. # DONE.
 
 # set the defaults.
 DEFAULT_VALUES = {

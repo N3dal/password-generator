@@ -232,7 +232,24 @@ def _generate():
 
 def _show():
     """show last password had been generated."""
-    pass
+
+    # first checkout if their pass word or not.
+    # guard condition.
+    if not last_password:
+        # if the last_password string is empty.
+        print("No password Had been generated, generate one using 'generate' command.")
+
+        return None
+
+    print(last_password)
+
+    # then send the generated password to clipboard.
+    copy2clipboard(last_password)
+
+    # now tell the user that the password in clipboard.
+    print("\nthe password in the clipboard you can paste it directly.")
+
+    return last_password
 
 
 def _set():

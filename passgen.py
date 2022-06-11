@@ -42,7 +42,8 @@ PROGRAM_OPTIONS_REPL = (
     "options",
     "help",
     "exit", "quit",  # same command.
-    "show"
+    "show",
+    "map"
 )
 
 ARGUMENTS = (
@@ -144,25 +145,28 @@ def _help(doc_type: int = 0):
     PASSWORD_GENERATOR_DOCUMENTATION_REPL_COMMANDS = """
     clear = cls
         clear the REPL screen.
-    
+
     generate = gen
         generate random password with values in the password map,
         and send it to the clipboard directly.
-    
+
     set
         change password map value to generate random patterns for your passwords.
-    
+
     options
         show all available options with brief description.
-    
+
     help
         show help msg simply out this msg.
-    
+
     exit = quit
         ending the REPL session.
-    
+
     show
         show last password had been generated, and send it to the clipboard again.
+
+    map
+        show the password generated pattern, simply-out password map values.
     """
 
     if doc_type == 0:
@@ -269,6 +273,11 @@ def _options():
     return None
 
 
+def _map():
+    """show the default password dictionary in simple way for the users."""
+    pass
+
+
 def main_loop():
     """the main loop for our REPL program."""
 
@@ -296,6 +305,9 @@ def main_loop():
 
         elif usr_input == "show":
             _show()
+
+        elif usr_input == "map":
+            _map()
 
         else:
 

@@ -56,6 +56,9 @@ ARGUMENTS = (
     "-h", "--help"
 )
 
+# var to store the last password that have been generated.
+last_password = ""
+
 
 def clear():
     """wipe terminal screen."""
@@ -188,6 +191,8 @@ def _generate():
     """generate new password depending on,
     the password_default option dictionary."""
 
+    global last_password
+
     string = ""
 
     if DEFAULT_VALUES["lower"]:
@@ -218,6 +223,9 @@ def _generate():
 
     # now tell the user that the password in clipboard.
     print("\nthe password in the clipboard you can paste it directly.")
+
+    # now add the generated password to last password had been generated.
+    last_password = generated_password
 
     return generated_password
 

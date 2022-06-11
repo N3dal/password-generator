@@ -254,7 +254,10 @@ def _show():
 
 def _set(key: str, value: object):
     """set new value for password default dictionary"""
-    pass
+
+    global DEFAULT_VALUES
+
+    DEFAULT_VALUES[key] = value
 
 
 def _options():

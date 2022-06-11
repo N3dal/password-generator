@@ -252,7 +252,7 @@ def _show():
     return last_password
 
 
-def _set():
+def _set(key: str, value: object):
     """set new value for password default dictionary"""
     pass
 

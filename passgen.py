@@ -275,7 +275,11 @@ def _options():
 
 def _map():
     """show the default password dictionary in simple way for the users."""
-    pass
+
+    for key, value in DEFAULT_VALUES.items():
+        print(f"{key} = {value}")
+
+    return None
 
 
 def main_loop():
